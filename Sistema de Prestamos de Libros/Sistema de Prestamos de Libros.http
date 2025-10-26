@@ -1,0 +1,9 @@
+@Sistema_de_Prestamos_de_Libros_HostAddress = http://localhost:5006
+
+GET {{Sistema_de_Prestamos_de_Libros_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+"ConnectionStrings": {
+  "ConexionBD": "Server=localhost;Database=PrestamosLibros;Trusted_Connection=True;"
+}
