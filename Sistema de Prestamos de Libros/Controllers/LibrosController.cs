@@ -2,13 +2,13 @@
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Sistema_de_Prestamos_de_Libros
+namespace Sistema_de_Prestamos_de_Libros.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class LibrosController : ControllerBase
     {
-        [HttpGet]
+        [HttpGet(Name = "GetLibros")]
         public IEnumerable<string> GetLibros()
         {
             return new string[] { "value1", "value2" };
@@ -21,7 +21,7 @@ namespace Sistema_de_Prestamos_de_Libros
         }
 
         // POST api/<LibrosController>
-        [HttpPost]
+        [HttpPost(Name = "PostLibros")]
         public void Post([FromBody] string value)
         {
         }

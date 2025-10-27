@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace Sistema_de_Prestamos_de_Libros.Controllers
+namespace Sistema_Biblioteca.Controllers
 {
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        private static readonly string[] Order = new[]
+        private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
@@ -25,7 +25,7 @@ namespace Sistema_de_Prestamos_de_Libros.Controllers
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Order[Random.Shared.Next(Order.Length)]
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
         }

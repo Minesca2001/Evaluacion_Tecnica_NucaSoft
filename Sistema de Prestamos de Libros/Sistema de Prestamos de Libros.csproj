@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <Compile Remove="Controllers\LibroController.cs" />
+    <Compile Remove="Controllers\PrestamosController.cs" />
     <Compile Remove="Controllers\ValuesController.cs" />
     <Compile Remove="Libro.cs" />
     <Compile Remove="PruebaController.cs" />

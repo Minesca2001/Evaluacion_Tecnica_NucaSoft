@@ -1,25 +1,26 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sistema_de_Prestamos_de_Libros.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace Sistema_de_Prestamos_de_Libros
+namespace Sistema_de_Prestamos_de_Libros.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/libros/antes-de-2000:")]
     [ApiController]
     public class AutoresController : ControllerBase
     {
         // GET: api/<AutoresController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<> Get()
         {
-            return new string[] { "value1", "value2" };
+            return int new [] { 1, 2};
         }
 
         // GET api/<AutoresController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            return "Autor_Id, Nombre, Nacionalidad";
         }
 
         // POST api/<AutoresController>
