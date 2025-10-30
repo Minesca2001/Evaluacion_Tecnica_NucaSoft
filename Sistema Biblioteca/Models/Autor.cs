@@ -1,9 +1,15 @@
 ﻿namespace Sistema_Biblioteca.Models
 {
+    // Clase que representa un autor dentro de un sistema de biblioteca
     public class Autor
     {
-        public int autor_id { get; set; }
-        public string nombre { get; set; } = string.Empty;
-        public string nacionalidad { get; set; } = string.Empty;
+        // Identificador único del autor (clave primaria)
+        public int AutorId { get; set; }
+
+        // Nombre completo del autor
+        public string Nombre { get; set; } = string.Empty;
+
+        // Nacionalidad del autor
+        public string Nacionalidad { get; set; } = string.Empty;
     }
 }

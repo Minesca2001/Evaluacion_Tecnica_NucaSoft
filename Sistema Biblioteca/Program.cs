@@ -1,26 +1,22 @@
 using Microsoft.EntityFrameworkCore;
 using Sistema_Biblioteca.Context;
+using Sistema_Biblioteca.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("Connection");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connectionString));
+var connectionString = builder.Configuration.GetConnectionString("ConexionBiblioteca");
+builder.Services.AddDbContext<BibliotecaContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Esta variable inicializa los datos automáticamente
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var context = scope.ServiceProvider.GetRequiredService<BibliotecaContext>();
+    DatosIniciales.CargarDatos(context);
 }
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
